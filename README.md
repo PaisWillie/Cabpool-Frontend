@@ -15,4 +15,3 @@
     1.  **Emulated performance**: Hardware
     1.  **Device Frame**: Yes
 1. Select `Finish`
-1. To use the emulator device, select **Pixel 6 Pro API 31** on the bottom right of your VSCode
