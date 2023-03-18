@@ -23,3 +23,7 @@
     *Note:* The Kotlin plugin is **not** compatible with any versions later than v2022.2.5
     
 1. Install the latest Kotlin plugin [here](https://plugins.jetbrains.com/plugin/6954-kotlin)
+
+## Other Settings
+
+1. Java SDK (JDK) JetBrains Runtime version 17.0.6
