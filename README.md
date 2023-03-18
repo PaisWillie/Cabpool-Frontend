@@ -12,7 +12,7 @@
 1. Select `Next`
 1. Configure to the following:
     1.  **Startup orientation**: Portrait
-    1.  **Emulated performance**: Hardware
+    1.  **Emulated performance**: Automatic (or Hardware if you have a graphics card)
     1.  **Device Frame**: Yes
 1. Select `Finish`
 
