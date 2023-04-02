@@ -24,3 +24,17 @@ Visit [this setup guide](https://reactnative.dev/docs/environment-setup) and fol
 1. Run `npm install` to install all dependencies
 1. Run `npm run start` to start the app
 1. When prompted, press `a` in the terminal to run the app on the Android emulator
+
+## Creating a New Branch
+
+```
+git checkout -b "feature/my-description-here"
+git push -u origin "feature/my-description-here"
+```
+
+### Branch Naming Conventions
+
+- `feature/` - for new features
+- `fix/` - for bug fixes
+- `refactor/` - for refactoring code
+- `docs/` - for documentation changes
