@@ -38,3 +38,16 @@ git push -u origin "feature/my-description-here"
 - `fix/` - for bug fixes
 - `refactor/` - for refactoring code
 - `docs/` - for documentation changes
+
+## Merging a Branch
+
+1. Rebase your branch onto `main` and resolve any conflicts
+
+    ```bash
+    git checkout main
+    git pull --rebase origin main
+    ```
+
+1. Create a pull request on GitHub
+1. Ensure that the pull request has been approved by at least one other developer
+1. Merge the pull request into `main` on GitHub
