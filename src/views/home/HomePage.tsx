@@ -1,11 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const HomePage = () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  );
+  return <Text>Home Page</Text>;
 };
 
 export default HomePage;

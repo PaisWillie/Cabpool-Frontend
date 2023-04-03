@@ -1,11 +1,8 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 const LoginPage = () => {
-  return (
-    <div>
-      <h1>Login Page</h1>
-    </div>
-  );
+  return <Text>Login Page</Text>;
 };
 
 export default LoginPage;
