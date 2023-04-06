@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomePage from './src/views/home';
 import {NavigationContainer} from '@react-navigation/native';
 import LoginPage from './src/views/login';
+import RouteInputPage from './src/views/route-input';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,6 +11,13 @@ const App = (): JSX.Element => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="RouteInput"
+          component={RouteInputPage}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="Home"
           component={HomePage}
