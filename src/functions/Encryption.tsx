@@ -1,6 +1,4 @@
-var encryption_key = 'secret';
-
-const Encrypt = (input: string) => {
+const Encrypt = (input: string, encryption_key: string) => {
   let delimiter = '-';
   let encrypted = '';
 
@@ -14,7 +12,7 @@ const Encrypt = (input: string) => {
   return encrypted;
 };
 
-const Decrypt = (input: string) => {
+const Decrypt = (input: string, encryption_key: string) => {
   let delimiter = '-';
   let encryptedChars = input.split(delimiter);
   let decrypted = '';
