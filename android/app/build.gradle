@@ -1,5 +1,14 @@
+project.ext.envConfigFiles = [
+  release: ".env.production",
+  dev: ".env.development",
+// Also you can different types of environments,
+  // for example staging.
+  stage: ".env.staging",
+];
+
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+apply from: project(":react-native-config").projectDir.getPath() + "/dotenv.gradle"
 
 import com.android.build.OutputFile
 
@@ -100,7 +109,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        manifestPlaceholders = [GOOGLE_MAPS_API_KEY: "$process.env.GOOGLE_MAPS_API_KEY"]
+        resValue "string", "build_config_package", "com.taxicarpool"
     }
 
     splits {
