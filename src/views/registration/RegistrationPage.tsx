@@ -7,7 +7,7 @@ import AppDualTextInput from '../../components/appDualTextInput';
 import AppButton from '../../components/appButton';
 import RegisterAccount from '../../controllers/RegistrationController';
 
-const {height} = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 
 const RegistrationPage = () => {
   const [firstName, setFirstName] = useState('');
