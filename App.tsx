@@ -1,9 +1,8 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomePage from './src/views/home';
 import {NavigationContainer} from '@react-navigation/native';
 import LoginPage from './src/views/login';
-import RouteInputPage from './src/views/route-input';
+import RouteConfirmPage from './src/views/route_confirm';
 import RegistrationPage from './src/views/registration';
 
 const Stack = createNativeStackNavigator();
@@ -27,8 +26,8 @@ const App = (): JSX.Element => {
           }}
         />
         <Stack.Screen
-          name="RouteInput"
-          component={RouteInputPage}
+          name="RouteConfirm"
+          component={RouteConfirmPage}
           options={{
             headerShown: false,
           }}

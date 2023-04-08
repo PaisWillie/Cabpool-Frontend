@@ -8,7 +8,7 @@ import Payment from './components/Payment';
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
 import GoogleMaps from './components/GoogleMaps';
 
-const RouteInputPage = () => {
+const RouteConfirmPage = () => {
   return (
     <View
       style={{
@@ -45,4 +45,4 @@ const RouteInputPage = () => {
   );
 };
 
-export default RouteInputPage;
+export default RouteConfirmPage;
