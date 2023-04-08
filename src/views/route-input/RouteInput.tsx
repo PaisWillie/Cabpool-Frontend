@@ -5,7 +5,11 @@ import {Button} from '@rneui/themed';
 import RouteLocations from './components/RouteLocations';
 import SuggestedRides from './components/SuggestedRides';
 import Payment from './components/Payment';
+<<<<<<< HEAD
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
+=======
+import FloatingActionButtons from './components/FloatingActionButtons';
+>>>>>>> 915ab11 (Moved action buttons to components)
 
 const RouteInputPage = () => {
   return (
