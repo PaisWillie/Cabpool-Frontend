@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View} from 'react-native';
-import {Button, FAB, Icon, Text} from '@rneui/themed';
+import {Button, FAB, Icon} from '@rneui/themed';
 import RouteLocations from './components/RouteLocations';
 import SuggestedRides from './components/SuggestedRides';
 import Payment from './components/Payment';
