@@ -1,36 +1,41 @@
 import React, { useState } from 'react';
-import { Keyboard, View, Text, StyleSheet, TextInput, Button, Image, Dimensions, } from 'react-native';
+import {
+  Keyboard,
+  View,
+  StyleSheet,
+  TextInput,
+  Image,
+  Dimensions,
+} from 'react-native';
+import { Text } from '@rneui/base';
+import AppTextInput from '../../components/appTextInput';
+import AppButton from '../../components/appButton';
+import Background from '../../components/background';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const HandleRegisterPress = () => {
-
-  }
+  const HandleRegisterPress = () => {};
 
   const HandleLoginPress = () => {
     Keyboard.dismiss();
 
-    if(email.length > 0 && password.length === 0) {
-      setErrorMsg('Enter password')
-    }
-    else if(email.length === 0 && password.length > 0) {
-      setErrorMsg('Enter email')
-    }
-    else if (password.length > 0 && email.length > 0) {
-      if(email.match(/\S+@\S+\.\S+/) != null){
+    if (email.length > 0 && password.length === 0) {
+      setErrorMsg('Enter password');
+    } else if (email.length === 0 && password.length > 0) {
+      setErrorMsg('Enter email');
+    } else if (password.length > 0 && email.length > 0) {
+      if (email.match(/\S+@\S+\.\S+/) != null) {
         Login();
-      }
-      else{
+      } else {
         setErrorMsg('Enter a Valid Email Address');
       }
+    } else {
+      setErrorMsg('Enter email and password');
     }
-    else {
-      setErrorMsg('Enter email and password')
-    }
-  }
+  };
 
   const Login = () => {
     /*const isValid = await ValidateLogin(email, password);
@@ -41,7 +46,8 @@ const LoginPage = () => {
       setPassword('');
       return false;
     }*/
-    setErrorMsg('Incorrect Email or Password')
+
+    setErrorMsg('Incorrect Email or Password');
     setPassword('');
     return false;
   };
@@ -51,55 +57,56 @@ const LoginPage = () => {
     setErrorMsg('');
   };
 
+  const handleEmailChange = (email: string) => {
+    setEmail(email);
+    setErrorMsg('');
+  };
+
   return (
     <View style={styles.container}>
-      <Image 
-        source={require('../../assets/LoginPageBg.jpeg')} 
-        style={styles.backgroundImage}
+      <Background
+        source={require('../../assets/LoginPageBg.jpeg')}
+        color='white'
+        style={{
+          zIndex: -1,
+        }}
       />
       <View style={styles.header}>
-        <Text 
-          style={styles.headerText}>
-        </Text>
+        <Text style={styles.headerText}></Text>
       </View>
       <View style={styles.inputContainer}>
-        <TextInput 
-          style={styles.textInput}
-          placeholder="Email"
-          keyboardType="email-address"
-          autoComplete="email"
-          onChangeText={setEmail}
-          value={email}
+        <AppTextInput
+          leftIcon=''
+          rightIcon=''
+          placeholder='Email'
+          onChangeText={handleEmailChange}
         />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Password"
-          secureTextEntry
-          autoComplete="password"
+        <AppTextInput
+          leftIcon=''
+          rightIcon=''
+          secureTextEntry={true}
+          placeholder='Password'
           onChangeText={handlePasswordChange}
-          value={password}
         />
-        <Text 
-          style={styles.errorMessageText}>
-          {errorMsg}
-        </Text>
+        <Text style={styles.errorMessageText}>{errorMsg}</Text>
         <View style={styles.loginButtonContainer}>
-          <Button 
-          title="Login" 
-          onPress={HandleLoginPress} 
+          <AppButton
+            text='Login'
+            onPress={HandleLoginPress}
+            borderRadius={15}
+            width={280}
+            height={40}
           />
-        </View>
-        <View style={styles.registerButtonContainer}>
-          <Button 
-          title="Create an Account" 
-          onPress={HandleRegisterPress} 
+          <AppButton
+            text='Create an Account'
+            onPress={HandleRegisterPress}
+            borderRadius={15}
+            width={280}
+            height={40}
           />
         </View>
       </View>
-      <Image 
-        style = {styles.logo}
-        source={require('../../assets/logo.png')} 
-      />
+      <Image style={styles.logo} source={require('../../assets/logo.png')} />
     </View>
   );
 };
@@ -139,7 +146,7 @@ const styles = StyleSheet.create({
     width: '80%',
     alignItems: 'center',
     zIndex: 1,
-  },  
+  },
   textInput: {
     width: 280,
     height: 40,
@@ -159,7 +166,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     overflow: 'hidden',
     width: 280,
-    marginTop: 100,
+    marginTop: 10,
   },
   errorMessageText: {
     color: 'black',
@@ -174,7 +181,7 @@ const styles = StyleSheet.create({
     transform: [{ scale: 0.5 }],
     position: 'absolute',
     tintColor: 'black',
-  }
+  },
 });
 
 export default LoginPage;
