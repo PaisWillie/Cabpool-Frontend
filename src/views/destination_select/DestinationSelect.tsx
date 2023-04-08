@@ -21,6 +21,7 @@ const DestinationSelectPage = ({navigation}: any) => {
         });
         console.log(position);
         console.log(destination);
+        // TODO: Wait for start to be set by getCurrentPosition before calling getDirections
         getDirections(
           // `${start.latitude}, ${start.longitude}`,
           '15 Cottrill St, Hamilton, ON, L8S 3L5',
