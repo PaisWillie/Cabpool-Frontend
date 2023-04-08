@@ -6,23 +6,7 @@ import {Input} from '@rneui/base';
 import GoogleMaps from '../../components/GoogleMaps';
 import Geolocation from '@react-native-community/geolocation';
 
-type position = {
-  coords: {
-    accuracy: number;
-    altitude: number;
-    heading: number;
-    latitude: number;
-    longitude: number;
-    speed: number;
-  };
-  extras: {
-    networkLocationType: string;
-  };
-  mocked: boolean;
-  timestamp: number;
-};
-
-const DestinationSelectPage = () => {
+const DestinationSelectPage = ({navigation}: any) => {
   const [destination, setDestination] = useState<string>('');
   const [start, setStart] = useState<string>('');
 
@@ -36,7 +20,15 @@ const DestinationSelectPage = () => {
       },
       {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000},
     );
-    // TODO: Go to route confirm page when start position is fetched and set
+
+    navigation.navigate('RouteConfirm', {
+      start: start,
+      destination: destination,
+    });
+
+    // getDirections(start, destination).then(res => {
+    //   console.log(res);
+    // });
   };
 
   return (
