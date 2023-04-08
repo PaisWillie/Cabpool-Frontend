@@ -8,7 +8,7 @@ import Payment from './components/Payment';
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
 import GoogleMaps from '../../components/GoogleMaps';
 
-const RouteConfirmPage = () => {
+const RouteConfirmPage = ({route}: any) => {
   return (
     <View
       style={{
@@ -17,7 +17,10 @@ const RouteConfirmPage = () => {
         height: '100%',
         justifyContent: 'flex-end',
       }}>
-      <GoogleMaps />
+      <GoogleMaps
+        currentLocation={route.params.start}
+        directions={route.params.directions}
+      />
       <View
         id="information-card"
         style={{

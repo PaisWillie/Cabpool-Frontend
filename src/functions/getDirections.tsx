@@ -1,15 +1,11 @@
 import {decode} from '@mapbox/polyline';
 import Config from 'react-native-config';
+import {coordinates} from '../types/MapsTypes';
 
 const getDirections = async (
   startLoc: string,
   destinationLoc: string,
-): Promise<
-  {
-    latitude: number;
-    longitude: number;
-  }[]
-> => {
+): Promise<coordinates> => {
   try {
     const KEY = Config.GOOGLE_MAPS_API_KEY;
     let resp = await fetch(
@@ -20,6 +16,9 @@ const getDirections = async (
       return [];
     }
     let respJson = await resp.json();
+
+    console.log(respJson);
+
     let points = decode(respJson.routes[0].overview_polyline.points);
     let coords = points.map((point, _) => {
       return {

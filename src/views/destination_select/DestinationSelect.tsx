@@ -5,30 +5,38 @@ import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloati
 import {Input} from '@rneui/base';
 import GoogleMaps from '../../components/GoogleMaps';
 import Geolocation from '@react-native-community/geolocation';
+import {coordinate} from '../../types/MapsTypes';
+import getDirections from '../../functions/getDirections';
 
 const DestinationSelectPage = ({navigation}: any) => {
   const [destination, setDestination] = useState<string>('');
-  const [start, setStart] = useState<string>('');
+  const [start, setStart] = useState<coordinate>({latitude: 0, longitude: 0});
 
   const handleTextEntry = () => {
     Geolocation.getCurrentPosition(
       position => {
-        setStart(`${position.coords.latitude}, ${position.coords.longitude}`);
+        setStart({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        });
+        console.log(position);
+        console.log(destination);
+        getDirections(
+          // `${start.latitude}, ${start.longitude}`,
+          '15 Cottrill St, Hamilton, ON, L8S 3L5',
+          destination,
+        ).then(res => {
+          navigation.navigate('RouteConfirm', {
+            // start: start,
+            directions: res,
+          });
+        });
       },
       error => {
         console.log(error);
       },
       {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000},
     );
-
-    navigation.navigate('RouteConfirm', {
-      start: start,
-      destination: destination,
-    });
-
-    // getDirections(start, destination).then(res => {
-    //   console.log(res);
-    // });
   };
 
   return (
