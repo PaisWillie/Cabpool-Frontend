@@ -22,7 +22,7 @@ DerivedData
 *.xcuserstate
 ios/.xcode.env.local
 
-# Android/IntelliJ
+# Android/VSCode
 #
 build/
 .idea
@@ -33,6 +33,7 @@ local.properties
 .cxx/
 *.keystore
 !debug.keystore
+.vscode
 
 # node.js
 #
