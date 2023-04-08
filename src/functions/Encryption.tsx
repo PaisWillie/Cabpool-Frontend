@@ -1,4 +1,4 @@
-const Encrypt = (input: string, encryption_key: string) => {
+const encrypt = (input: string, encryption_key: string) => {
   let delimiter = '-';
   let encrypted = '';
 
@@ -12,7 +12,7 @@ const Encrypt = (input: string, encryption_key: string) => {
   return encrypted;
 };
 
-const Decrypt = (input: string, encryption_key: string) => {
+const decrypt = (input: string, encryption_key: string) => {
   let delimiter = '-';
   let encryptedChars = input.split(delimiter);
   let decrypted = '';
@@ -26,4 +26,4 @@ const Decrypt = (input: string, encryption_key: string) => {
   return decrypted;
 };
 
-export {Encrypt, Decrypt};
+export {encrypt, decrypt};
