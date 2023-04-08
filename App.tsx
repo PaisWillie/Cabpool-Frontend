@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import LoginPage from './src/views/login';
 import RouteInputPage from './src/views/route-input';
 import RegistrationPage from './src/views/registration';
+import GoogleMapsTest from './src/views/google-maps-test';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +13,7 @@ const App = (): JSX.Element => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {/*
         <Stack.Screen
           name="Home"
           component={HomePage}
@@ -32,7 +34,7 @@ const App = (): JSX.Element => {
           options={{
             headerShown: false,
           }}
-        />
+        /> */}
         <Stack.Screen
           name="RouteInput"
           component={RouteInputPage}

@@ -6,6 +6,7 @@ import RouteLocations from './components/RouteLocations';
 import SuggestedRides from './components/SuggestedRides';
 import Payment from './components/Payment';
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
+import GoogleMaps from './components/GoogleMaps';
 
 const RouteInputPage = () => {
   return (
@@ -14,14 +15,15 @@ const RouteInputPage = () => {
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
       }}>
-      <MenuProfileFloatingActionButtons />
+      <GoogleMaps />
       <View
         id="information-card"
         style={{
           backgroundColor: 'white',
           flexDirection: 'column',
+          elevation: 90,
           width: '100%',
           paddingHorizontal: 12,
           paddingVertical: 24,
@@ -38,6 +40,7 @@ const RouteInputPage = () => {
           Book Now
         </Button>
       </View>
+      <MenuProfileFloatingActionButtons />
     </View>
   );
 };
