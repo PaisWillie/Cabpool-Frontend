@@ -9,8 +9,12 @@ const MenuProfileFloatingActionButtons = () => {
       style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginHorizontal: 12,
-        marginTop: 12,
+        paddingHorizontal: 12,
+        paddingTop: 12,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
       }}>
       <FAB color="white">
         <Icon name="menu" type="feather" color="black" />
