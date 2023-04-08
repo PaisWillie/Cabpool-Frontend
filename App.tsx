@@ -13,13 +13,6 @@ const App = (): JSX.Element => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={HomePage}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
           name="Login"
           component={LoginPage}
           options={{
