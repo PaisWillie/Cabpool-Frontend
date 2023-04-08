@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
-import {
-  Keyboard,
-  View,
-  StyleSheet,
-  TextInput,
-  Image,
-  Dimensions,
-} from 'react-native';
-import { Text } from '@rneui/base';
+/* eslint-disable react-native/no-inline-styles */
+import React, {useState} from 'react';
+import {Keyboard, View, StyleSheet, Image, Dimensions} from 'react-native';
+import {Text} from '@rneui/base';
 import AppTextInput from '../../components/appTextInput';
 import AppButton from '../../components/appButton';
 import Background from '../../components/background';
@@ -38,27 +32,18 @@ const LoginPage = () => {
   };
 
   const Login = () => {
-    /*const isValid = await ValidateLogin(email, password);
-    if (isValid) {
-      return true;
-    } else {
-      setErrorMsg('Incorrect Email or Password')
-      setPassword('');
-      return false;
-    }*/
-
     setErrorMsg('Incorrect Email or Password');
     setPassword('');
     return false;
   };
 
-  const handlePasswordChange = (password: string) => {
-    setPassword(password);
+  const handlePasswordChange = (newPassword: string) => {
+    setPassword(newPassword);
     setErrorMsg('');
   };
 
-  const handleEmailChange = (email: string) => {
-    setEmail(email);
+  const handleEmailChange = (newEmail: string) => {
+    setEmail(newEmail);
     setErrorMsg('');
   };
 
@@ -66,39 +51,39 @@ const LoginPage = () => {
     <View style={styles.container}>
       <Background
         source={require('../../assets/LoginPageBg.jpeg')}
-        color='white'
+        color="white"
         style={{
           zIndex: -1,
         }}
       />
       <View style={styles.header}>
-        <Text style={styles.headerText}></Text>
+        <Text style={styles.headerText} />
       </View>
       <View style={styles.inputContainer}>
         <AppTextInput
-          leftIcon=''
-          rightIcon=''
-          placeholder='Email'
+          leftIcon=""
+          rightIcon=""
+          placeholder="Email"
           onChangeText={handleEmailChange}
         />
         <AppTextInput
-          leftIcon=''
-          rightIcon=''
+          leftIcon=""
+          rightIcon=""
           secureTextEntry={true}
-          placeholder='Password'
+          placeholder="Password"
           onChangeText={handlePasswordChange}
         />
         <Text style={styles.errorMessageText}>{errorMsg}</Text>
         <View style={styles.loginButtonContainer}>
           <AppButton
-            text='Login'
+            text="Login"
             onPress={HandleLoginPress}
             borderRadius={15}
             width={280}
             height={40}
           />
           <AppButton
-            text='Create an Account'
+            text="Create an Account"
             onPress={HandleRegisterPress}
             borderRadius={15}
             width={280}
@@ -137,7 +122,7 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
     textShadowColor: 'white',
-    textShadowOffset: { width: 0, height: 0 },
+    textShadowOffset: {width: 0, height: 0},
     textShadowRadius: 10,
   },
   inputContainer: {
@@ -173,12 +158,12 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textShadowColor: 'white',
     fontWeight: 'bold',
-    textShadowOffset: { width: 0, height: 0 },
+    textShadowOffset: {width: 0, height: 0},
     textShadowRadius: 10,
   },
   logo: {
     top: -20,
-    transform: [{ scale: 0.5 }],
+    transform: [{scale: 0.5}],
     position: 'absolute',
     tintColor: 'black',
   },
