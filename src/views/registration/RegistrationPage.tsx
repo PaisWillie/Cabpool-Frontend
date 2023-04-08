@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Keyboard, View, Text, StyleSheet, Dimensions } from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React, {useState} from 'react';
+import {Keyboard, View, Text, StyleSheet, Dimensions} from 'react-native';
 import Background from '../../components/background';
 import AppTextInput from '../../components/appTextInput';
 import AppDualTextInput from '../../components/appDualTextInput';
 import AppButton from '../../components/appButton';
 
-const { width, height } = Dimensions.get('window');
+const {height} = Dimensions.get('window');
 
 const RegistrationPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -28,52 +29,52 @@ const RegistrationPage = () => {
     }
   };
 
-  const handleFirstNameChange = (firstName: string) => {
-    setFirstName(firstName);
+  const handleFirstNameChange = (newFirstName: string) => {
+    setFirstName(newFirstName);
   };
 
-  const handleLastNameChange = (lastName: string) => {
-    setLastName(lastName);
+  const handleLastNameChange = (newLastName: string) => {
+    setLastName(newLastName);
   };
 
-  const handleEmailChange = (email: string) => {
-    setEmail(email);
+  const handleEmailChange = (newEmail: string) => {
+    setEmail(newEmail);
   };
 
-  const handlePasswordChange = (password: string) => {
-    setPassword(password);
+  const handlePasswordChange = (newPassword: string) => {
+    setPassword(newPassword);
   };
 
-  const handleConfirmPasswordChange = (confirmPassword: string) => {
-    setConfirmPassword(confirmPassword);
+  const handleConfirmPasswordChange = (newConfirmPassword: string) => {
+    setConfirmPassword(newConfirmPassword);
   };
 
-  const validateFirstName = (firstName: string): boolean => {
-    if (firstName.length < 1) {
+  const validateFirstName = (newFirstName: string): boolean => {
+    if (newFirstName.length < 1) {
       setErrorMsg('Enter First Name');
       return false;
     }
     return true;
   };
 
-  const validateLastName = (lastName: string): boolean => {
-    if (lastName.length < 1) {
+  const validateLastName = (newLastName: string): boolean => {
+    if (newLastName.length < 1) {
       setErrorMsg('Enter Last Name');
       return false;
     }
     return true;
   };
 
-  const validateEmail = (email: string): boolean => {
-    if (email.match(/\S+@\S+\.\S+/) == null) {
+  const validateEmail = (newEmail: string): boolean => {
+    if (newEmail.match(/\S+@\S+\.\S+/) == null) {
       setErrorMsg('Enter Valid Email Address');
       return false;
     }
     return true;
   };
 
-  const validatePassword = (password: string): boolean => {
-    if (password.length < 8) {
+  const validatePassword = (newPassword: string): boolean => {
+    if (newPassword.length < 8) {
       setErrorMsg('Password must be a length of 8');
       return false;
     }
@@ -81,10 +82,10 @@ const RegistrationPage = () => {
   };
 
   const validateConfirmPassword = (
-    password: string,
-    confirmPassword: string,
+    checkPassword: string,
+    checkConfirmPassword: string,
   ): boolean => {
-    if (password === confirmPassword) {
+    if (checkPassword === checkConfirmPassword) {
       return true;
     }
     setErrorMsg('Passwords do not match');
@@ -92,18 +93,18 @@ const RegistrationPage = () => {
   };
 
   const validateEntires = (
-    firstName: string,
-    lastName: string,
-    email: string,
-    password: string,
-    confirmPassword: string,
+    checkFirstName: string,
+    checkLastName: string,
+    checkEmail: string,
+    checkPassword: string,
+    checkConfirmPassword: string,
   ): boolean => {
     return (
-      validateFirstName(firstName) &&
-      validateLastName(lastName) &&
-      validateEmail(email) &&
-      validatePassword(password) &&
-      validateConfirmPassword(password, confirmPassword)
+      validateFirstName(checkFirstName) &&
+      validateLastName(checkLastName) &&
+      validateEmail(checkEmail) &&
+      validatePassword(checkPassword) &&
+      validateConfirmPassword(checkPassword, checkConfirmPassword)
     );
   };
 
@@ -112,40 +113,40 @@ const RegistrationPage = () => {
       <Text style={styles.HeaderText}>Create an Account</Text>
       <Background
         source={require('../../assets/LoginPageBg.jpeg')}
-        color='white'
+        color="white"
         style={{
           zIndex: -1,
         }}
       />
       <View style={styles.InputFields}>
         <AppDualTextInput
-          header='Name'
-          leftPlaceholder='First Name'
-          rightPlaceholder='Last Name'
+          header="Name"
+          leftPlaceholder="First Name"
+          rightPlaceholder="Last Name"
           leftSecureTextEntry={false}
           rightSecureTextEntry={false}
           onChangeLeftText={handleFirstNameChange}
           onChangeRightText={handleLastNameChange}
         />
         <AppTextInput
-          header='Email'
-          placeholder='Enter email'
+          header="Email"
+          placeholder="Enter email"
           onChangeText={handleEmailChange}
         />
         <AppTextInput
-          header='Password'
-          placeholder='Enter Password'
+          header="Password"
+          placeholder="Enter Password"
           onChangeText={handlePasswordChange}
           secureTextEntry={true}
         />
         <AppTextInput
-          header='Confirm Password'
-          placeholder='Enter Password'
+          header="Confirm Password"
+          placeholder="Enter Password"
           onChangeText={handleConfirmPasswordChange}
           secureTextEntry={true}
         />
         <AppButton
-          text='Register'
+          text="Register"
           width={280}
           height={40}
           marginTop={20}
@@ -176,7 +177,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textShadowColor: 'white',
     fontWeight: 'bold',
-    textShadowOffset: { width: 0, height: 0 },
+    textShadowOffset: {width: 0, height: 0},
     textShadowRadius: 10,
     textAlign: 'center',
   },

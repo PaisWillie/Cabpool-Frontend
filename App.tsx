@@ -4,6 +4,7 @@ import HomePage from './src/views/home';
 import {NavigationContainer} from '@react-navigation/native';
 import LoginPage from './src/views/login';
 import RouteInputPage from './src/views/route-input';
+import RegistrationPage from './src/views/registration';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,13 @@ const App = (): JSX.Element => {
         <Stack.Screen
           name="Login"
           component={LoginPage}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Registration"
+          component={RegistrationPage}
           options={{
             headerShown: false,
           }}
