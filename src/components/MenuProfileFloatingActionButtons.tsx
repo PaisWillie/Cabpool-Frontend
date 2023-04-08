@@ -3,7 +3,7 @@ import {FAB, Icon} from '@rneui/base';
 import React from 'react';
 import {View} from 'react-native';
 
-const FloatingActionButtons = () => {
+const MenuProfileFloatingActionButtons = () => {
   return (
     <View
       style={{
@@ -22,4 +22,4 @@ const FloatingActionButtons = () => {
   );
 };
 
-export default FloatingActionButtons;
+export default MenuProfileFloatingActionButtons;

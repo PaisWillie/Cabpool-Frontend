@@ -5,7 +5,7 @@ import {Button} from '@rneui/themed';
 import RouteLocations from './components/RouteLocations';
 import SuggestedRides from './components/SuggestedRides';
 import Payment from './components/Payment';
-import FloatingActionButtons from './components/FloatingActionButtons';
+import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
 
 const RouteInputPage = () => {
   return (
@@ -16,7 +16,7 @@ const RouteInputPage = () => {
         height: '100%',
         justifyContent: 'space-between',
       }}>
-      <FloatingActionButtons />
+      <MenuProfileFloatingActionButtons />
       <View
         id="information-card"
         style={{

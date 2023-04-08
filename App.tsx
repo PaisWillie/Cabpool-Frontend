@@ -12,13 +12,6 @@ const App = (): JSX.Element => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="RouteInput"
-          component={RouteInputPage}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
           name="Home"
           component={HomePage}
           options={{
@@ -28,6 +21,13 @@ const App = (): JSX.Element => {
         <Stack.Screen
           name="Login"
           component={LoginPage}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="RouteInput"
+          component={RouteInputPage}
           options={{
             headerShown: false,
           }}
