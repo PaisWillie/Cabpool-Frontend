@@ -5,6 +5,7 @@ import {Text} from '@rneui/base';
 import AppTextInput from '../../components/appTextInput';
 import AppButton from '../../components/appButton';
 import Background from '../../components/background';
+import CheckLogin from '../../controllers/LoginController';
 
 const LoginPage = ({navigation}: any) => {
   const [email, setEmail] = useState('');
@@ -18,25 +19,17 @@ const LoginPage = ({navigation}: any) => {
   const handleLoginPress = () => {
     Keyboard.dismiss();
 
-    if (email.length > 0 && password.length === 0) {
-      setErrorMsg('Enter password');
-    } else if (email.length === 0 && password.length > 0) {
-      setErrorMsg('Enter email');
-    } else if (password.length > 0 && email.length > 0) {
-      if (email.match(/\S+@\S+\.\S+/) != null) {
-        login();
+    if (validateEnties(email, password)) {
+      if (CheckLogin(email, password)) {
+        Login();
       } else {
-        setErrorMsg('Enter a Valid Email Address');
+        setErrorMsg('Invalid Email or Password');
       }
-    } else {
-      setErrorMsg('Enter email and password');
     }
   };
 
-  const login = () => {
-    setErrorMsg('Incorrect Email or Password');
-    setPassword('');
-    return false;
+  const Login = () => {
+    navigation.navigate('Home');
   };
 
   const handlePasswordChange = (newPassword: string) => {
@@ -47,6 +40,18 @@ const LoginPage = ({navigation}: any) => {
   const handleEmailChange = (newEmail: string) => {
     setEmail(newEmail);
     setErrorMsg('');
+  };
+
+  const validateEnties = (email: string, password: string) => {
+    if (email.match(/\S+@\S+\.\S+/) == null) {
+      setErrorMsg('Enter a valid email adress');
+    } else if (password.length == 0) {
+      setErrorMsg('Enter a valid password');
+    } else {
+      return true;
+    }
+
+    return false;
   };
 
   return (
