@@ -5,6 +5,7 @@ import Background from '../../components/background';
 import AppTextInput from '../../components/appTextInput';
 import AppDualTextInput from '../../components/appDualTextInput';
 import AppButton from '../../components/appButton';
+import RegisterAccount from '../../controllers/RegistrationController';
 
 const {height} = Dimensions.get('window');
 
@@ -18,11 +19,16 @@ const RegistrationPage = () => {
 
   const HandleRegisterPress = (): void => {
     Keyboard.dismiss();
+    setErrorMsg('');
 
     if (
       validateEntires(firstName, lastName, email, password, confirmPassword)
     ) {
-      console.log('SUCCESSFULL REGISTER');
+      if (RegisterAccount(firstName, lastName, email, password)) {
+        console.log('SUCCESSFULL REGISTER');
+      } else {
+        console.log('REGISTRATION FAILED');
+      }
     } else {
       console.log('INVALID ENTRIES');
       console.log(firstName, lastName, email, password, confirmPassword);
