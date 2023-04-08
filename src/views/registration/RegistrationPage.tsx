@@ -28,6 +28,7 @@ const RegistrationPage = () => {
         console.log('SUCCESSFULL REGISTER');
       } else {
         console.log('REGISTRATION FAILED');
+        setErrorMsg('REGISTRATION FAILED \n Email already exists');
       }
     } else {
       console.log('INVALID ENTRIES');
