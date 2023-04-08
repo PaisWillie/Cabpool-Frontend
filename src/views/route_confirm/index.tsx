@@ -1,2 +1,2 @@
-import RouteConfirmPage from './RouteInput';
+import RouteConfirmPage from './RouteConfirm';
 export default RouteConfirmPage;
