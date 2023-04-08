@@ -19,12 +19,10 @@ const DestinationSelectPage = ({navigation}: any) => {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         });
-        console.log(position);
-        console.log(destination);
-        // TODO: Wait for start to be set by getCurrentPosition before calling getDirections
+        // TODO: Fix start location not being set
         getDirections(
           // `${start.latitude}, ${start.longitude}`,
-          '15 Cottrill St, Hamilton, ON, L8S 3L5',
+          'John Hodgins Engineering Building, Main Street West, Hamilton, ON',
           destination,
         ).then(res => {
           navigation.navigate('RouteConfirm', {
