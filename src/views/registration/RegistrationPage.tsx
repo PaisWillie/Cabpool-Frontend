@@ -9,7 +9,7 @@ import RegisterAccount from '../../controllers/RegistrationController';
 
 const {width, height} = Dimensions.get('window');
 
-const RegistrationPage = () => {
+const RegistrationPage = ({navigation}: any) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -17,17 +17,16 @@ const RegistrationPage = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const HandleRegisterPress = (): void => {
+  const HandleRegisterPress = async () => {
     Keyboard.dismiss();
     setErrorMsg('');
 
     if (
       validateEntires(firstName, lastName, email, password, confirmPassword)
     ) {
-      if (RegisterAccount(firstName, lastName, email, password)) {
-        console.log('SUCCESSFULL REGISTER');
+      if (await RegisterAccount(firstName, lastName, email, password)) {
+        navigation.navigate('Home');
       } else {
-        console.log('REGISTRATION FAILED');
         setErrorMsg('REGISTRATION FAILED \n Email already exists');
       }
     } else {
