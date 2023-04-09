@@ -6,12 +6,14 @@ import AppTextInput from '../../components/appTextInput';
 import AppButton from '../../components/appButton';
 import Background from '../../components/background';
 
-const LoginPage = () => {
+const LoginPage = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const HandleRegisterPress = () => {};
+  const HandleRegisterPress = () => {
+    navigation.navigate('Registration');
+  };
 
   const HandleLoginPress = () => {
     Keyboard.dismiss();
@@ -83,7 +85,7 @@ const LoginPage = () => {
             height={40}
           />
           <AppButton
-            text="Create an Account"
+            text="Register"
             onPress={HandleRegisterPress}
             borderRadius={15}
             width={280}

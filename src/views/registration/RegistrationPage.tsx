@@ -7,7 +7,7 @@ import AppDualTextInput from '../../components/appDualTextInput';
 import AppButton from '../../components/appButton';
 import RegisterAccount from '../../controllers/RegistrationController';
 
-const {width, height} = Dimensions.get('window');
+const {height} = Dimensions.get('window');
 
 const RegistrationPage = ({navigation}: any) => {
   const [firstName, setFirstName] = useState('');
@@ -17,7 +17,7 @@ const RegistrationPage = ({navigation}: any) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const HandleRegisterPress = async () => {
+  const handleRegisterPress = async () => {
     Keyboard.dismiss();
     setErrorMsg('');
 
@@ -33,6 +33,10 @@ const RegistrationPage = ({navigation}: any) => {
       console.log('INVALID ENTRIES');
       console.log(firstName, lastName, email, password, confirmPassword);
     }
+  };
+
+  const handleCancelPress = () => {
+    navigation.navigate('Login');
   };
 
   const handleFirstNameChange = (newFirstName: string) => {
@@ -156,9 +160,16 @@ const RegistrationPage = ({navigation}: any) => {
           width={280}
           height={40}
           marginTop={20}
-          onPress={HandleRegisterPress}
+          onPress={handleRegisterPress}
         />
         <Text style={styles.errorMessageText}>{errorMsg}</Text>
+        <AppButton
+          text="Cancel"
+          width={280}
+          height={40}
+          marginTop={20}
+          onPress={handleCancelPress}
+        />
       </View>
     </View>
   );
