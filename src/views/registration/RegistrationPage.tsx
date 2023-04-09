@@ -25,7 +25,7 @@ const RegistrationPage = ({navigation}: any) => {
       validateEntires(firstName, lastName, email, password, confirmPassword)
     ) {
       if (await RegisterAccount(firstName, lastName, email, password)) {
-        navigation.navigate('Home');
+        navigation.navigate('DestinationSelect');
       } else {
         setErrorMsg('REGISTRATION FAILED \n Email already exists');
       }
