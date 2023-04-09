@@ -16,7 +16,7 @@ const LoginPage = ({navigation}: any) => {
     navigation.navigate('Registration');
   };
 
-  const handleLoginPress = () => {
+  const handleLoginPress = async () => {
     Keyboard.dismiss();
 
     if (validateEnties(email, password)) {
