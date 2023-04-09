@@ -5,10 +5,11 @@ import Background from '../../components/background';
 import AppTextInput from '../../components/appTextInput';
 import AppDualTextInput from '../../components/appDualTextInput';
 import AppButton from '../../components/appButton';
+import RegisterAccount from '../../controllers/RegistrationController';
 
 const {height} = Dimensions.get('window');
 
-const RegistrationPage = () => {
+const RegistrationPage = ({navigation}: any) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -16,17 +17,26 @@ const RegistrationPage = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const HandleRegisterPress = (): void => {
+  const handleRegisterPress = async () => {
     Keyboard.dismiss();
+    setErrorMsg('');
 
     if (
       validateEntires(firstName, lastName, email, password, confirmPassword)
     ) {
-      console.log('SUCCESSFULL REGISTER');
+      if (await RegisterAccount(firstName, lastName, email, password)) {
+        navigation.navigate('Home');
+      } else {
+        setErrorMsg('REGISTRATION FAILED \n Email already exists');
+      }
     } else {
       console.log('INVALID ENTRIES');
       console.log(firstName, lastName, email, password, confirmPassword);
     }
+  };
+
+  const handleCancelPress = () => {
+    navigation.navigate('Login');
   };
 
   const handleFirstNameChange = (newFirstName: string) => {
@@ -150,9 +160,16 @@ const RegistrationPage = () => {
           width={280}
           height={40}
           marginTop={20}
-          onPress={HandleRegisterPress}
+          onPress={handleRegisterPress}
         />
         <Text style={styles.errorMessageText}>{errorMsg}</Text>
+        <AppButton
+          text="Cancel"
+          width={280}
+          height={40}
+          marginTop={20}
+          onPress={handleCancelPress}
+        />
       </View>
     </View>
   );

@@ -6,14 +6,16 @@ import AppTextInput from '../../components/appTextInput';
 import AppButton from '../../components/appButton';
 import Background from '../../components/background';
 
-const LoginPage = () => {
+const LoginPage = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const HandleRegisterPress = () => {};
+  const handleRegisterPress = () => {
+    navigation.navigate('Registration');
+  };
 
-  const HandleLoginPress = () => {
+  const handleLoginPress = () => {
     Keyboard.dismiss();
 
     if (email.length > 0 && password.length === 0) {
@@ -22,7 +24,7 @@ const LoginPage = () => {
       setErrorMsg('Enter email');
     } else if (password.length > 0 && email.length > 0) {
       if (email.match(/\S+@\S+\.\S+/) != null) {
-        Login();
+        login();
       } else {
         setErrorMsg('Enter a Valid Email Address');
       }
@@ -31,7 +33,7 @@ const LoginPage = () => {
     }
   };
 
-  const Login = () => {
+  const login = () => {
     setErrorMsg('Incorrect Email or Password');
     setPassword('');
     return false;
@@ -77,14 +79,14 @@ const LoginPage = () => {
         <View style={styles.loginButtonContainer}>
           <AppButton
             text="Login"
-            onPress={HandleLoginPress}
+            onPress={handleLoginPress}
             borderRadius={15}
             width={280}
             height={40}
           />
           <AppButton
-            text="Create an Account"
-            onPress={HandleRegisterPress}
+            text="Register"
+            onPress={handleRegisterPress}
             borderRadius={15}
             width={280}
             height={40}
