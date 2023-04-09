@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 
 const screenOptions = {
   headerShown: false,
-  statusBarColor: 'rgba(0,0,0,0)',
+  statusBarTranslucent: true,
 };
 
 const App = (): JSX.Element => {

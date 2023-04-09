@@ -8,7 +8,7 @@ import Payment from './components/Payment';
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
 import GoogleMaps from '../../components/GoogleMaps';
 
-const RouteConfirmPage = ({route}: any) => {
+const RouteConfirmPage = ({navigation, route}: any) => {
   return (
     <View
       style={{
@@ -18,8 +18,8 @@ const RouteConfirmPage = ({route}: any) => {
         justifyContent: 'flex-end',
       }}>
       <GoogleMaps
-        currentLocation={route.params.start}
-        directions={route.params.directions}
+        currentLocation={route.params?.start}
+        directions={route.params?.directions}
       />
       <View
         id="information-card"
@@ -33,6 +33,18 @@ const RouteConfirmPage = ({route}: any) => {
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
         }}>
+        <View style={{justifyContent: 'flex-start'}}>
+          <Button
+            size="sm"
+            type="clear"
+            containerStyle={{marginBottom: 12, marginTop: -12, width: '16%'}}
+            titleStyle={{
+              color: 'tomato',
+            }}
+            onPress={() => navigation.goBack()}>
+            Cancel
+          </Button>
+        </View>
         <RouteLocations />
         <SuggestedRides />
         <Payment />

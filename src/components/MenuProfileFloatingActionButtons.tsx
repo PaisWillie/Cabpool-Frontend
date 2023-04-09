@@ -10,7 +10,7 @@ const MenuProfileFloatingActionButtons = () => {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 12,
-        paddingTop: 12,
+        paddingTop: 36,
         position: 'absolute',
         top: 0,
         left: 0,

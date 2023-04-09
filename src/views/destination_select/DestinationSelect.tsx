@@ -10,7 +10,10 @@ import getDirections from '../../functions/getDirections';
 
 const DestinationSelectPage = ({navigation}: any) => {
   const [destination, setDestination] = useState<string>('');
-  const [start, setStart] = useState<coordinate>({latitude: 0, longitude: 0});
+  const [/*start*/ _, setStart] = useState<coordinate>({
+    latitude: 0,
+    longitude: 0,
+  });
 
   const handleTextEntry = () => {
     Geolocation.getCurrentPosition(
@@ -25,7 +28,7 @@ const DestinationSelectPage = ({navigation}: any) => {
           'John Hodgins Engineering Building, Main Street West, Hamilton, ON',
           destination,
         ).then(res => {
-          navigation.navigate('RouteConfirm', {
+          navigation.push('RouteConfirm', {
             // start: start,
             directions: res,
           });
