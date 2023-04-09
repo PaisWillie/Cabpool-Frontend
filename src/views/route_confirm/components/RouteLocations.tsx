@@ -3,7 +3,11 @@ import React from 'react';
 import {Divider, Icon, Text} from '@rneui/themed';
 import {StyleSheet, View} from 'react-native';
 
-const RouteLocations = () => {
+type RouteLocationsProps = {
+  destination: string;
+};
+
+const RouteLocations = (props: RouteLocationsProps) => {
   return (
     <View
       id="route-locations"
@@ -28,9 +32,9 @@ const RouteLocations = () => {
           flexDirection: 'column',
           width: '100%',
         }}>
-        <Text style={styles.text}>345 Cityhall Park</Text>
+        <Text style={styles.text}>{props.destination}</Text>
         <Divider width={1} style={{width: '80%', marginVertical: 16}} />
-        <Text style={styles.text}>Barclay Stadium</Text>
+        <Text style={styles.text}>Your location</Text>
       </View>
     </View>
   );
