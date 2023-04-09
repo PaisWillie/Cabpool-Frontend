@@ -20,7 +20,7 @@ const LoginPage = ({navigation}: any) => {
     Keyboard.dismiss();
 
     if (validateEnties(email, password)) {
-      if (CheckLogin(email, password)) {
+      if (await CheckLogin(email, password)) {
         Login();
       } else {
         setErrorMsg('Invalid Email or Password');
