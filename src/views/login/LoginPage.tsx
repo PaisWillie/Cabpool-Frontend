@@ -42,10 +42,10 @@ const LoginPage = ({navigation}: any) => {
     setErrorMsg('');
   };
 
-  const validateEnties = (email: string, password: string) => {
-    if (email.match(/\S+@\S+\.\S+/) == null) {
+  const validateEnties = (checkEmail: string, checkPassword: string) => {
+    if (checkEmail.match(/\S+@\S+\.\S+/) == null) {
       setErrorMsg('Enter a valid email adress');
-    } else if (password.length == 0) {
+    } else if (checkPassword.length === 0) {
       setErrorMsg('Enter a valid password');
     } else {
       return true;
