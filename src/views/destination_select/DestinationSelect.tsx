@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
-import {Input} from '@rneui/base';
+import {Button, Icon, Input} from '@rneui/base';
 import GoogleMaps from '../../components/GoogleMaps';
 import Geolocation from '@react-native-community/geolocation';
 import {coordinate} from '../../types/MapsTypes';
@@ -31,6 +31,7 @@ const DestinationSelectPage = ({navigation}: any) => {
           navigation.push('RouteConfirm', {
             // start: start,
             directions: res,
+            destination: destination,
           });
         });
       },
@@ -49,30 +50,46 @@ const DestinationSelectPage = ({navigation}: any) => {
       }}>
       <GoogleMaps />
       <MenuProfileFloatingActionButtons />
-      <Input
-        placeholder="Where are you going?"
-        onChangeText={setDestination}
-        onSubmitEditing={handleTextEntry}
-        inputContainerStyle={{
-          borderBottomWidth: 0,
-        }}
-        leftIcon={{name: 'search', type: 'feather', color: 'dodgerblue'}}
-        inputStyle={{
-          marginLeft: 10,
-        }}
-        containerStyle={{
-          backgroundColor: 'white',
-          borderRadius: 15,
-          marginBottom: 60,
-          marginLeft: 20,
-          width: '90%',
-          height: 50,
-          elevation: 5,
-        }}
-        leftIconContainerStyle={{
-          marginLeft: 10,
-        }}
-      />
+      <View
+        style={{
+          flexDirection: 'row',
+        }}>
+        <Input
+          placeholder="Where are you going?"
+          onChangeText={setDestination}
+          onSubmitEditing={handleTextEntry}
+          inputContainerStyle={{
+            borderBottomWidth: 0,
+          }}
+          leftIcon={{name: 'search', type: 'feather', color: 'dodgerblue'}}
+          inputStyle={{
+            marginLeft: 10,
+          }}
+          containerStyle={{
+            backgroundColor: 'white',
+            borderRadius: 15,
+            marginBottom: 60,
+            marginLeft: 20,
+            width: '75%',
+            height: 50,
+            elevation: 5,
+          }}
+          leftIconContainerStyle={{
+            marginLeft: 10,
+          }}
+        />
+        <Button
+          color="white"
+          buttonStyle={{
+            elevation: 5,
+            borderRadius: 15,
+            width: 50,
+            height: 50,
+            marginLeft: 10,
+          }}>
+          <Icon name="offer" type="material-community" color="dodgerblue" />
+        </Button>
+      </View>
     </View>
   );
 };

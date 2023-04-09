@@ -45,7 +45,7 @@ const RouteConfirmPage = ({navigation, route}: any) => {
             Cancel
           </Button>
         </View>
-        <RouteLocations />
+        <RouteLocations destination={route.params?.destination} />
         <SuggestedRides />
         <Payment />
         <Button
