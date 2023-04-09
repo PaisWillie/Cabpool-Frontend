@@ -1,19 +1,22 @@
 const Login = async (email: string, password: string) => {
   try {
-    console.log(email, password);
-    const response = await fetch('http://localhost:8082/user/login', {
+    const response = await fetch('http://10.0.2.2:8082/user/login', {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({email: email, password: password}),
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
     });
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
-    console.log(JSON.stringify({email: email, password: password}));
-    //throw error;
+    if (response.status >= 200 && response.status < 300) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (e) {
+    console.error(e);
     return false;
   }
 };
