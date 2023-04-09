@@ -21,15 +21,15 @@ const LoginPage = ({navigation}: any) => {
 
     if (validateEnties(email, password)) {
       if (await CheckLogin(email, password)) {
-        Login();
+        login();
       } else {
         setErrorMsg('Invalid Email or Password');
       }
     }
   };
 
-  const Login = () => {
-    navigation.navigate('Home');
+  const login = () => {
+    navigation.navigate('DestinationSelect');
   };
 
   const handlePasswordChange = (newPassword: string) => {
