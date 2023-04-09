@@ -17,8 +17,6 @@ const getDirections = async (
     }
     let respJson = await resp.json();
 
-    console.log(respJson);
-
     let points = decode(respJson.routes[0].overview_polyline.points);
     let coords = points.map((point, _) => {
       return {
