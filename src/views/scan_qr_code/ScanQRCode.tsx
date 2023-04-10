@@ -15,6 +15,10 @@ const ScanQRCodePage = ({navigation}: any) => {
     setStatus(true);
   };
 
+  const handleContinue = () => {
+    navigation.navigate('OfferCarpool', {taxiID});
+  };
+
   return (
     <View>
       <View
@@ -74,21 +78,27 @@ const ScanQRCodePage = ({navigation}: any) => {
         </View>
         <View>
           <Text>Status</Text>
-          {status ? (
-            <Text style={{fontWeight: 'bold', fontSize: 18, color: 'green'}}>
-              Taxi ID Scanned: {taxiID}
-            </Text>
-          ) : (
-            <Text style={{fontWeight: 'bold', fontSize: 18}}>
-              No Taxi ID Scanned
-            </Text>
-          )}
+          <View
+            style={{
+              marginBottom: 24,
+            }}>
+            {status ? (
+              <Text style={{fontWeight: 'bold', fontSize: 18, color: 'green'}}>
+                Taxi ID Scanned: {taxiID}
+              </Text>
+            ) : (
+              <Text style={{fontWeight: 'bold', fontSize: 18}}>
+                Waiting for scan...
+              </Text>
+            )}
+          </View>
           <Button
             uppercase
             size="lg"
             buttonStyle={{borderRadius: 10}}
-            disabled={!status}>
-            Confirm
+            disabled={!status}
+            onPress={handleContinue}>
+            Continue
           </Button>
         </View>
       </View>
