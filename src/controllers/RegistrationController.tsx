@@ -1,3 +1,4 @@
+import {encrypt} from '../functions/Encryption';
 const RegisterAccount = async (
   firstName: string,
   lastName: string,
@@ -11,10 +12,10 @@ const RegisterAccount = async (
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
+        firstName: encrypt(firstName),
+        lastName: encrypt(lastName),
+        email: encrypt(email),
+        password: encrypt(password),
       }),
     });
     if (response.status >= 200 && response.status < 300) {
