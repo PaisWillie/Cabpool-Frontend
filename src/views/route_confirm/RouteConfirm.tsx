@@ -9,6 +9,10 @@ import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloati
 import GoogleMaps from '../../components/GoogleMaps';
 
 const RouteConfirmPage = ({navigation, route}: any) => {
+  const handleBookNow = () => {
+    navigation.navigate('RideDetails');
+  };
+
   return (
     <View
       style={{
@@ -51,7 +55,8 @@ const RouteConfirmPage = ({navigation, route}: any) => {
         <Button
           uppercase
           size="lg"
-          buttonStyle={{borderRadius: 10, marginTop: 12}}>
+          buttonStyle={{borderRadius: 10, marginTop: 12}}
+          onPress={handleBookNow}>
           Book Now
         </Button>
       </View>
