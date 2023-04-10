@@ -60,7 +60,7 @@ const RideDetailsPage = ({navigation}: any) => {
           profileImageURLs={[
             'https://randomuser.me/api/portraits/men/40.jpg',
             'https://randomuser.me/api/portraits/men/41.jpg',
-            'https://randomuser.me/api/portraits/men/42.jpg',
+            'https://randomuser.me/api/portraits/women/25.jpg',
           ]}
         />
         <Divider style={{marginVertical: 12}} />
@@ -95,7 +95,6 @@ const RideDetailsPage = ({navigation}: any) => {
           <Button
             size="lg"
             color="lavender"
-            // type="outline"
             titleStyle={{color: 'black', fontWeight: 'bold'}}
             onPress={() => {
               console.log('Pressed!');
