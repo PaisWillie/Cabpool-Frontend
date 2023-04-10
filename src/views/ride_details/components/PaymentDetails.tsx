@@ -2,8 +2,14 @@
 import {Button, Text} from '@rneui/base';
 import React from 'react';
 import {View} from 'react-native';
+import Payment from '../../../components/Payment';
 
-const Payment = () => {
+type PaymentDetailsProps = {
+  cost: number;
+  discount: number;
+};
+
+const PaymentDetails = (props: PaymentDetailsProps) => {
   return (
     <View
       style={{
@@ -34,15 +40,30 @@ const Payment = () => {
           Split Cost
         </Button>
       </View>
+
       <Text
         style={{
           fontWeight: 'bold',
-          fontSize: 18,
+          fontSize: 22,
         }}>
-        CAD $26.95
+        CAD ${props.cost}
       </Text>
+      <Text
+        style={{
+          color: 'grey',
+        }}>
+        Your fare may be lowered as riders join your ride.
+      </Text>
+      <Text
+        style={{
+          color: 'grey',
+          marginBottom: 20,
+        }}>
+        You have saved CAD ${props.discount} compared to a regular taxi.
+      </Text>
+      <Payment lastFourDigits={5682} expirationDate="10/25" />
     </View>
   );
 };
 
-export default Payment;
+export default PaymentDetails;

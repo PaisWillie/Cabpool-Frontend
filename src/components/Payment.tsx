@@ -3,7 +3,12 @@ import {Button, Icon, Text} from '@rneui/themed';
 import React from 'react';
 import {View} from 'react-native';
 
-const Payment = () => {
+type PaymentProps = {
+  lastFourDigits: number;
+  expirationDate: string;
+};
+
+const Payment = (props: PaymentProps) => {
   return (
     <View
       style={{
@@ -34,7 +39,28 @@ const Payment = () => {
             width: '100%',
             paddingLeft: 12,
           }}>
-          <Text style={{fontWeight: 'bold', fontSize: 16}}>•••• 1234</Text>
+          <View
+            style={{
+              flexDirection: 'column',
+            }}>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                fontSize: 16,
+                marginTop: -5,
+                marginBottom: -3,
+              }}>
+              •••• •••• •••• {props.lastFourDigits}
+            </Text>
+            <Text
+              style={{
+                color: 'grey',
+                fontSize: 12,
+                marginBottom: -5,
+              }}>
+              Expires {props.expirationDate}
+            </Text>
+          </View>
           <Icon name="chevron-right" type="feather" color="black" />
         </View>
       </Button>

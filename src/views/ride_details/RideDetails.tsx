@@ -5,7 +5,7 @@ import GoogleMaps from '../../components/GoogleMaps';
 import {BlurView} from '@react-native-community/blur';
 import {Button, Divider, Text} from '@rneui/base';
 import TripDetails from './components/TripDetails';
-import Payment from './components/Payment';
+import PaymentDetails from './components/PaymentDetails';
 import DesignatedRiderDetails from './components/DesignatedRiderDetails';
 
 const RideDetailsPage = ({navigation}: any) => {
@@ -57,19 +57,45 @@ const RideDetailsPage = ({navigation}: any) => {
         <Divider style={{marginVertical: 12}} />
         <TripDetails />
         <Divider style={{marginVertical: 12}} />
-        <Payment />
-        <Button
-          size="lg"
-          color="aliceblue"
-          type="outline"
-          titleStyle={{color: 'black', fontWeight: 'bold'}}
-          onPress={() => {
-            console.log('Pressed!');
-            navigation.navigate('DestinationSelect');
-          }}
-          buttonStyle={{borderRadius: 10, marginTop: 12}}>
-          Cancel
-        </Button>
+        <PaymentDetails cost={26.95} discount={6.05} />
+        <View
+          style={{
+            flexDirection: 'row',
+            width: '100%',
+          }}>
+          <Button
+            size="lg"
+            type="outline"
+            icon={{
+              name: 'dice',
+              type: 'font-awesome-5',
+              color: 'dodgerblue',
+            }}
+            onPress={() => {
+              console.log('Pressed!');
+              navigation.navigate('DestinationSelect');
+            }}
+            buttonStyle={{
+              borderRadius: 10,
+              marginTop: 48,
+              width: '60%',
+              borderWidth: 1,
+              borderColor: 'dodgerblue',
+            }}
+          />
+          <Button
+            size="lg"
+            color="lavender"
+            // type="outline"
+            titleStyle={{color: 'black', fontWeight: 'bold'}}
+            onPress={() => {
+              console.log('Pressed!');
+              navigation.navigate('DestinationSelect');
+            }}
+            buttonStyle={{borderRadius: 10, marginTop: 48, width: '100%'}}>
+            Cancel
+          </Button>
+        </View>
       </View>
     </View>
   );

@@ -89,6 +89,51 @@ const DesignatedRiderDetails = (props: DesignatedRiderDetailsProps) => {
           </View>
         </View>
       </View>
+      <View
+        style={{
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-end',
+        }}>
+        <View
+          style={{
+            flexDirection: 'row',
+          }}>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              color: 'grey',
+            }}>
+            Plate # •{' '}
+          </Text>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              color: 'black',
+            }}>
+            BSJG 234
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+          }}>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              color: 'grey',
+            }}>
+            Taxi ID •{' '}
+          </Text>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              color: 'black',
+            }}>
+            824-231
+          </Text>
+        </View>
+      </View>
     </View>
   );
 };

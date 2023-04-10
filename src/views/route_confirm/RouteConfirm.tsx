@@ -4,7 +4,7 @@ import {View} from 'react-native';
 import {Button} from '@rneui/themed';
 import RouteLocations from './components/RouteLocations';
 import SuggestedRides from './components/SuggestedRides';
-import Payment from './components/Payment';
+import Payment from '../../components/Payment';
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
 import GoogleMaps from '../../components/GoogleMaps';
 
@@ -47,7 +47,7 @@ const RouteConfirmPage = ({navigation, route}: any) => {
         </View>
         <RouteLocations destination={route.params?.destination} />
         <SuggestedRides />
-        <Payment />
+        <Payment lastFourDigits={5682} expirationDate="10/25" />
         <Button
           uppercase
           size="lg"
