@@ -4,11 +4,15 @@ import {View} from 'react-native';
 import {Button} from '@rneui/themed';
 import RouteLocations from './components/RouteLocations';
 import SuggestedRides from './components/SuggestedRides';
-import Payment from './components/Payment';
+import Payment from '../../components/Payment';
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
 import GoogleMaps from '../../components/GoogleMaps';
 
 const RouteConfirmPage = ({navigation, route}: any) => {
+  const handleBookNow = () => {
+    navigation.navigate('RideDetails');
+  };
+
   return (
     <View
       style={{
@@ -28,7 +32,7 @@ const RouteConfirmPage = ({navigation, route}: any) => {
           flexDirection: 'column',
           elevation: 90,
           width: '100%',
-          paddingHorizontal: 12,
+          paddingHorizontal: 16,
           paddingVertical: 24,
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
@@ -47,11 +51,12 @@ const RouteConfirmPage = ({navigation, route}: any) => {
         </View>
         <RouteLocations destination={route.params?.destination} />
         <SuggestedRides />
-        <Payment />
+        <Payment lastFourDigits={5682} expirationDate="10/25" />
         <Button
           uppercase
           size="lg"
-          buttonStyle={{borderRadius: 10, marginTop: 12}}>
+          buttonStyle={{borderRadius: 10, marginTop: 12}}
+          onPress={handleBookNow}>
           Book Now
         </Button>
       </View>

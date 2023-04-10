@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Polyline} from 'react-native-maps';
-import {coordinate, coordinates} from '../types/MapsTypes';
+import {coordinate, coordinates} from '../types/MapTypes';
 
 const styles = StyleSheet.create({
   container: {
