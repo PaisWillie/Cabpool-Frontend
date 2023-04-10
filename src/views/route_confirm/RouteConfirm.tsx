@@ -28,7 +28,7 @@ const RouteConfirmPage = ({navigation, route}: any) => {
           flexDirection: 'column',
           elevation: 90,
           width: '100%',
-          paddingHorizontal: 12,
+          paddingHorizontal: 16,
           paddingVertical: 24,
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,

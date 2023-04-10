@@ -5,6 +5,7 @@ import LoginPage from './src/views/login';
 import RouteConfirmPage from './src/views/route_confirm';
 import RegistrationPage from './src/views/registration';
 import DestinationSelectPage from './src/views/destination_select';
+import RideDetailsPage from './src/views/ride_details';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,11 @@ const App = (): JSX.Element => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="RideDetails"
+          component={RideDetailsPage}
+          options={screenOptions}
+        />
         <Stack.Screen
           name="Login"
           component={LoginPage}
