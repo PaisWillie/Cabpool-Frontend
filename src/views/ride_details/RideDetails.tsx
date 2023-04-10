@@ -2,7 +2,6 @@
 import React from 'react';
 import {View} from 'react-native';
 import GoogleMaps from '../../components/GoogleMaps';
-import {BlurView} from '@react-native-community/blur';
 import {Button, Divider, Text} from '@rneui/base';
 import TripDetails from './components/TripDetails';
 import PaymentDetails from './components/PaymentDetails';
@@ -19,20 +18,6 @@ const RideDetailsPage = ({navigation}: any) => {
         justifyContent: 'flex-end',
       }}>
       <GoogleMaps />
-      <BlurView
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          width: '100%',
-          height: '100%',
-        }}
-        blurType="dark"
-        blurAmount={32}
-        reducedTransparencyFallbackColor="white"
-      />
       <View
         id="information-card"
         style={{
@@ -81,8 +66,7 @@ const RideDetailsPage = ({navigation}: any) => {
               color: 'dodgerblue',
             }}
             onPress={() => {
-              console.log('Pressed!');
-              navigation.navigate('DestinationSelect');
+              // navigation.navigate('DestinationSelect');
             }}
             buttonStyle={{
               borderRadius: 10,
@@ -97,8 +81,7 @@ const RideDetailsPage = ({navigation}: any) => {
             color="lavender"
             titleStyle={{color: 'black', fontWeight: 'bold'}}
             onPress={() => {
-              console.log('Pressed!');
-              navigation.navigate('DestinationSelect');
+              navigation.navigate('DisplayFare');
             }}
             buttonStyle={{borderRadius: 10, marginTop: 48, width: '100%'}}>
             Cancel

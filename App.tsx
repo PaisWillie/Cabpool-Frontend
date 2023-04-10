@@ -19,7 +19,7 @@ const App = (): JSX.Element => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Login"
           component={LoginPage}
           options={screenOptions}
@@ -43,7 +43,7 @@ const App = (): JSX.Element => {
           name="RideDetails"
           component={RideDetailsPage}
           options={screenOptions}
-        /> */}
+        />
         <Stack.Screen
           name="DisplayFare"
           component={DisplayFarePage}
