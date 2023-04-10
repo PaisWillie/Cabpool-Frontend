@@ -1,13 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import {Button, Text} from '@rneui/base';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 
 const ScanQRCodePage = ({navigation}: any) => {
+  const [taxiID, setTaxiID] = useState('');
+  const [status, setStatus] = useState(false);
+
   const onSuccess = (e: any) => {
-    console.log(e.data);
+    console.log(`Scanned Taxi ID: ${e.data}`);
+    setTaxiID(e.data);
+    setStatus(true);
   };
 
   return (
@@ -15,12 +20,9 @@ const ScanQRCodePage = ({navigation}: any) => {
       <View
         style={{
           position: 'absolute',
-
-          // Add a black border on the corners of the view
           borderColor: 'black',
           borderWidth: 3,
           borderRadius: 15,
-
           width: '90%',
           height: '54%',
           top: '26%',
@@ -40,7 +42,6 @@ const ScanQRCodePage = ({navigation}: any) => {
           left: '15%',
         }}
       />
-
       <View
         style={{
           display: 'flex',
@@ -73,7 +74,20 @@ const ScanQRCodePage = ({navigation}: any) => {
         </View>
         <View>
           <Text>Status</Text>
-          <Button uppercase size="lg" buttonStyle={{borderRadius: 10}}>
+          {status ? (
+            <Text style={{fontWeight: 'bold', fontSize: 18, color: 'green'}}>
+              Taxi ID Scanned: {taxiID}
+            </Text>
+          ) : (
+            <Text style={{fontWeight: 'bold', fontSize: 18}}>
+              No Taxi ID Scanned
+            </Text>
+          )}
+          <Button
+            uppercase
+            size="lg"
+            buttonStyle={{borderRadius: 10}}
+            disabled={!status}>
             Confirm
           </Button>
         </View>
