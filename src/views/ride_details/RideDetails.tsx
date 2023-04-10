@@ -7,6 +7,7 @@ import {Button, Divider, Text} from '@rneui/base';
 import TripDetails from './components/TripDetails';
 import PaymentDetails from './components/PaymentDetails';
 import DesignatedRiderDetails from './components/DesignatedRiderDetails';
+import Passengers from './components/Passengers';
 
 const RideDetailsPage = ({navigation}: any) => {
   return (
@@ -53,6 +54,14 @@ const RideDetailsPage = ({navigation}: any) => {
           rating={4.95}
           timeAway={3}
           name="Willie Pai"
+        />
+        <Divider style={{marginVertical: 12}} />
+        <Passengers
+          profileImageURLs={[
+            'https://randomuser.me/api/portraits/men/40.jpg',
+            'https://randomuser.me/api/portraits/men/41.jpg',
+            'https://randomuser.me/api/portraits/men/42.jpg',
+          ]}
         />
         <Divider style={{marginVertical: 12}} />
         <TripDetails />
