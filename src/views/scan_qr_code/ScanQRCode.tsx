@@ -15,8 +15,8 @@ const ScanQRCodePage = ({navigation}: any) => {
     setStatus(true);
   };
 
-  const handleContinue = () => {
-    navigation.navigate('OfferCarpool', {taxiID});
+  const handleSendOffer = () => {
+    navigation.navigate('RideDetails');
   };
 
   return (
@@ -97,8 +97,8 @@ const ScanQRCodePage = ({navigation}: any) => {
             size="lg"
             buttonStyle={{borderRadius: 10}}
             disabled={!status}
-            onPress={handleContinue}>
-            Continue
+            onPress={handleSendOffer}>
+            Send Offer
           </Button>
         </View>
       </View>

@@ -2,10 +2,10 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import MenuProfileFloatingActionButtons from '../../components/MenuProfileFloatingActionButtons';
-import {Button, Icon, Input} from '@rneui/base';
+import {Button, Input} from '@rneui/base';
 import GoogleMaps from '../../components/GoogleMaps';
 import Geolocation from '@react-native-community/geolocation';
-import {coordinate} from '../../types/MapsTypes';
+import {coordinate} from '../../types/MapTypes';
 import getDirections from '../../functions/getDirections';
 
 const DestinationSelectPage = ({navigation}: any) => {
@@ -80,15 +80,22 @@ const DestinationSelectPage = ({navigation}: any) => {
         />
         <Button
           color="white"
+          icon={{
+            name: 'offer',
+            type: 'material-community',
+            color: 'dodgerblue',
+          }}
           buttonStyle={{
             elevation: 5,
             borderRadius: 15,
             width: 50,
             height: 50,
             marginLeft: 10,
-          }}>
-          <Icon name="offer" type="material-community" color="dodgerblue" />
-        </Button>
+          }}
+          onPress={() => {
+            navigation.navigate('ScanQRCode');
+          }}
+        />
       </View>
     </View>
   );
