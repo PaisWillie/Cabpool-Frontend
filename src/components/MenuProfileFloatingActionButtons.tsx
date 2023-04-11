@@ -3,7 +3,13 @@ import {FAB, Icon} from '@rneui/base';
 import React from 'react';
 import {View} from 'react-native';
 
-const MenuProfileFloatingActionButtons = () => {
+type MenuProfileFloatingActionButtonsProps = {
+  navigation: any;
+};
+
+const MenuProfileFloatingActionButtons = (
+  props: MenuProfileFloatingActionButtonsProps,
+) => {
   return (
     <View
       style={{
@@ -19,7 +25,7 @@ const MenuProfileFloatingActionButtons = () => {
       <FAB color="white">
         <Icon name="menu" type="feather" color="black" />
       </FAB>
-      <FAB color="white">
+      <FAB color="white" onPress={() => props.navigation.push('Profile')}>
         <Icon name="person-outline" type="ionicons" color="black" />
       </FAB>
     </View>
