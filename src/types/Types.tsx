@@ -1,5 +1,3 @@
-import {Image} from 'react-native/types';
-
 type Taxi = {
   id: number;
   capacity: number;
@@ -11,7 +9,7 @@ type User = {
   email: string;
   phone: string;
   password: string;
-  image: Image;
+  imageURL: string;
 };
 
 type TripPart = {

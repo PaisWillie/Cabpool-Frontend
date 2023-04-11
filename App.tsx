@@ -7,6 +7,7 @@ import RegistrationPage from './src/views/registration';
 import DestinationSelectPage from './src/views/destination_select';
 import RideDetailsPage from './src/views/ride_details';
 import DisplayFarePage from './src/views/display_fare';
+import ScanQRCodePage from './src/views/scan_qr_code';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +20,7 @@ const App = (): JSX.Element => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Login"
           component={LoginPage}
           options={screenOptions}
@@ -28,10 +29,15 @@ const App = (): JSX.Element => {
           name="Registration"
           component={RegistrationPage}
           options={screenOptions}
-        />
+        /> */}
         <Stack.Screen
           name="DestinationSelect"
           component={DestinationSelectPage}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="ScanQRCode"
+          component={ScanQRCodePage}
           options={screenOptions}
         />
         <Stack.Screen
