@@ -20,7 +20,7 @@ const App = (): JSX.Element => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Login"
           component={LoginPage}
           options={screenOptions}
@@ -29,7 +29,7 @@ const App = (): JSX.Element => {
           name="Registration"
           component={RegistrationPage}
           options={screenOptions}
-        /> */}
+        />
         <Stack.Screen
           name="DestinationSelect"
           component={DestinationSelectPage}
