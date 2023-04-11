@@ -40,6 +40,11 @@ const HowIsYourTrip = (props: HowIsYourTripProps) => {
           marginBottom: 48,
         }}>
         <RateRider
+          name="Willie"
+          profileImageURL="https://randomuser.me/api/portraits/men/36.jpg"
+          setHasRating={props.setHasRating}
+        />
+        <RateRider
           name="Arash"
           profileImageURL="https://randomuser.me/api/portraits/men/40.jpg"
           setHasRating={props.setHasRating}

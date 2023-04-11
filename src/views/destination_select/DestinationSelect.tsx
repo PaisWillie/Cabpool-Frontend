@@ -25,7 +25,7 @@ const DestinationSelectPage = ({navigation}: any) => {
         // TODO: Fix start location not being set
         getDirections(
           // `${start.latitude}, ${start.longitude}`,
-          'John Hodgins Engineering Building, Main Street West, Hamilton, ON',
+          'Information Technology Building, 1280 Main Street West, Hamilton, ON',
           destination,
         ).then(res => {
           navigation.push('RouteConfirm', {
