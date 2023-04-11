@@ -66,7 +66,7 @@ const RideDetailsPage = ({navigation}: any) => {
               color: 'dodgerblue',
             }}
             onPress={() => {
-              // navigation.navigate('DestinationSelect');
+              navigation.navigate('ChallengeStart');
             }}
             buttonStyle={{
               borderRadius: 10,

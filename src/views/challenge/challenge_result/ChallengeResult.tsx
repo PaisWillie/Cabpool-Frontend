@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
-import {View, Animated, StyleSheet, Dimensions, Image} from 'react-native';
-import {Button, Divider, Text} from '@rneui/base';
+import {View, Animated, StyleSheet, Dimensions} from 'react-native';
+import {Button, Text} from '@rneui/base';
 
 const windowHeight = Dimensions.get('window').height;
 
