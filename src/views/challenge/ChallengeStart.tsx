@@ -1,5 +1,6 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import GoogleMaps from '../../components/GoogleMaps';
 import {Button, Divider, Text} from '@rneui/base';
 
