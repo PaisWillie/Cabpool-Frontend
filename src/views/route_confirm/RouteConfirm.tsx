@@ -41,7 +41,7 @@ const RouteConfirmPage = ({navigation, route}: any) => {
           <Button
             size="sm"
             type="clear"
-            containerStyle={{marginBottom: 12, marginTop: -12, width: '16%'}}
+            containerStyle={{marginBottom: 12, marginTop: -12, width: '17%'}}
             titleStyle={{
               color: 'tomato',
             }}
