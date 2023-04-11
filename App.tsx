@@ -12,7 +12,7 @@ import ProfilePage from './src/views/profile';
 import ChallengeStartPage from './src/views/challenge';
 import ChallengeRequestPage from './src/views/challenge/challenge_request';
 import ChallengeResultPage from './src/views/challenge/challenge_result';
-import ChallengeIneligibilityPage from './src/views/challenge/challenge_ineligibility';';
+import ChallengeIneligibilityPage from './src/views/challenge/challenge_ineligibility';
 
 const Stack = createNativeStackNavigator();
 
@@ -83,16 +83,6 @@ const App = (): JSX.Element => {
         <Stack.Screen
           name="DisplayFare"
           component={DisplayFarePage}
-          options={screenOptions}
-        />
-        <Stack.Screen
-          name="ChallengeStart"
-          component={ChallengeStartPage}
-          options={screenOptions}
-        />
-        <Stack.Screen
-          name="ChallengeResult"
-          component={ChallengeResultPage}
           options={screenOptions}
         />
       </Stack.Navigator>
