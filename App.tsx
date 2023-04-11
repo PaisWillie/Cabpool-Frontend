@@ -8,6 +8,7 @@ import DestinationSelectPage from './src/views/destination_select';
 import RideDetailsPage from './src/views/ride_details';
 import DisplayFarePage from './src/views/display_fare';
 import ScanQRCodePage from './src/views/scan_qr_code';
+import ProfilePage from './src/views/profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,11 @@ const App = (): JSX.Element => {
         <Stack.Screen
           name="DestinationSelect"
           component={DestinationSelectPage}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfilePage}
           options={screenOptions}
         />
         <Stack.Screen

@@ -60,7 +60,7 @@ const RouteConfirmPage = ({navigation, route}: any) => {
           Book Now
         </Button>
       </View>
-      <MenuProfileFloatingActionButtons />
+      <MenuProfileFloatingActionButtons navigation={navigation} />
     </View>
   );
 };

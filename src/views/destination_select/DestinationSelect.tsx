@@ -49,7 +49,7 @@ const DestinationSelectPage = ({navigation}: any) => {
         justifyContent: 'flex-end',
       }}>
       <GoogleMaps />
-      <MenuProfileFloatingActionButtons />
+      <MenuProfileFloatingActionButtons navigation={navigation} />
       <View
         style={{
           flexDirection: 'row',
