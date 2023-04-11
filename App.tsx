@@ -9,6 +9,10 @@ import RideDetailsPage from './src/views/ride_details';
 import DisplayFarePage from './src/views/display_fare';
 import ScanQRCodePage from './src/views/scan_qr_code';
 import ProfilePage from './src/views/profile';
+import ChallengeStartPage from './src/views/challenge';
+import ChallengeRequestPage from './src/views/challenge/challenge_request';
+import ChallengeResultPage from './src/views/challenge/challenge_result';
+import ChallengeIneligibilityPage from './src/views/challenge/challenge_ineligibility';
 
 const Stack = createNativeStackNavigator();
 
@@ -54,6 +58,26 @@ const App = (): JSX.Element => {
         <Stack.Screen
           name="RideDetails"
           component={RideDetailsPage}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="ChallengeStart"
+          component={ChallengeStartPage}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="ChallengeRequest"
+          component={ChallengeRequestPage}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="ChallengeResult"
+          component={ChallengeResultPage}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="ChallengeIneligibility"
+          component={ChallengeIneligibilityPage}
           options={screenOptions}
         />
         <Stack.Screen
