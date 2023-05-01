@@ -25,6 +25,7 @@ Requirements include:
 
 - This application was developed and tested using **Pixel 6 Pro** on **Android 12 (S)** using **React Native 0.71.5**
 - Install React Native using [this setup guide](https://reactnative.dev/docs/environment-setup) and follow the instructions for **React Native CLI Quickstart** for your OS
+- Set up the backend server with the [Cabpool-Backend repository](https://github.com/PaisWillie/Cabpool-Backend/)
 
 ### Running the App
 
