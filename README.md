@@ -24,7 +24,7 @@ Requirements include:
 ## Installation
 
 - This application was developed and tested using **Pixel 6 Pro** on **Android 12 (S)** using **React Native 0.66.4**
-- Install React Native using [this setup guide](https://reactnative.dev/docs/environment-setup) and follow the instructions for **React Native CLI Quickstart** for your OS.
+- Install React Native using [this setup guide](https://reactnative.dev/docs/environment-setup) and follow the instructions for **React Native CLI Quickstart** for your OS
 
 ### Running the App
 
