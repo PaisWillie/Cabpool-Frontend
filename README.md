@@ -19,11 +19,14 @@ Requirements include:
 ![Cabpool Destination Select](https://i.imgur.com/dxSbkIt.png)
 ![Cabpool Main Features](https://i.imgur.com/HuWS6tl.png)
 ![Cabpool Status & Summary](https://i.imgur.com/R48xRKp.png)
+
 > Device Mockup created from <a href="https://deviceframes.com/templates/google-pixel-6">Google Pixel 6 mockups</a>
 
 ## Installation
 
-- This application was developed and tested using **Pixel 6 Pro** on **Android 12 (S)** using **React Native 0.71.5**
+### Requirements
+
+- This application was developed and tested using Android Emulator with **Pixel 6 Pro** on **Android 12 (S)** using **React Native 0.71.5**
 - Install React Native using [this setup guide](https://reactnative.dev/docs/environment-setup) and follow the instructions for **React Native CLI Quickstart** for your OS
 - Set up the backend server with the [Cabpool-Backend repository](https://github.com/PaisWillie/Cabpool-Backend/)
 
