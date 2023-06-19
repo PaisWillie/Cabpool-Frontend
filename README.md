@@ -22,6 +22,14 @@ Requirements include:
 
 > Device Mockup created from <a href="https://deviceframes.com/templates/google-pixel-6">Google Pixel 6 mockups</a>
 
+## Documentation
+
+The following are Software Requirements Specifications (SRS) documents for the Cabpool application:
+
+- [Deliverable 1](documentation/Deliverable1.pdf)
+- [Deliverable 2](documentation/Deliverable2.pdf)
+- [Deliverable 3](documentation/Deliverable3.pdf)
+
 ## Installation
 
 ### Requirements
